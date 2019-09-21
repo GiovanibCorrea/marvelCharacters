@@ -1,0 +1,15 @@
+<mat-card *ngFor='let character of allCharacters | async'>
+    <img mat-card-image src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt='{{character.name}}'>
+
+    <mat-card-title>
+        {{character.name}}
+    </mat-card-title>
+
+    <app-stories [id]=character.id></app-stories>
+    
+    <mat-card-footer>
+        <a href='{{character.urls[0].url}}' target="_blank" title="Veja mais detalhes do {{character.name}}" fxFlex mat-flat-button>
+            Mais detalhes
+        </a>
+    </mat-card-footer>
+</mat-card>
